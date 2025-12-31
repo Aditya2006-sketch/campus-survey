@@ -1,0 +1,109 @@
+Create a full-stack web application called 
+"Issue Reporting Portal – KITS Ramtek"
+
+The purpose of this website is to allow students of Kavikulguru Institute of Technology and Science (KITS), Ramtek to report campus and hostel issues and track their resolution status.
+
+TECH STACK REQUIREMENTS:
+- Frontend: React.js (functional components, hooks, clean UI)
+- Backend: Node.js with Express.js
+- Database: MySQL
+- Image upload: store image path in MySQL, images in server folder
+- Authentication: Login system using MySQL
+- Use REST APIs to connect frontend and backend
+
+-------------------------------------------------
+FUNCTIONAL REQUIREMENTS:
+
+1. LOGIN PAGE (First Page)
+- User login using:
+  - Full Name
+  - Email ID
+  - Password
+- Validate user from MySQL database
+- After successful login, redirect to Dashboard
+
+-------------------------------------------------
+2. DASHBOARD PAGE
+- Show:
+  - Welcome message with logged-in user name
+  - Buttons:
+    - "Report General Issue"
+    - "Report Ragging Issue"
+    - "View My Issues"
+    - "Logout"
+
+-------------------------------------------------
+3. GENERAL ISSUE REPORTING PAGE
+Create a form with the following fields:
+- Issue Type (Dropdown):
+  - Electricity
+  - Water
+  - Internet
+  - Cleanliness
+  - Other
+- Location of Issue (Text input):
+  Example: Hostel A – Room 204, CSE Block – Lab 3
+- Description of the Issue (Textarea)
+- Upload Image of Issue (Image file input)
+- Issue Tagged By:
+  - Auto-fill logged-in user name
+- Submit Button
+
+On submit:
+- Store all data in MySQL
+- Default issue status should be: "Pending"
+
+-------------------------------------------------
+4. RAGGING ISSUE REPORTING PAGE (Separate Page)
+After submitting a general issue OR directly from dashboard, allow navigation to this page.
+
+Fields:
+- Victim Name
+- Location of Incident
+- Description of Incident
+- Optional Image Upload
+- Anonymous Option (checkbox)
+- Submit Button
+
+Store data securely in MySQL.
+This page should be visually distinct and serious in tone.
+
+-------------------------------------------------
+5. ISSUE STATUS TRACKING PAGE
+Allow the user to see:
+- List of all issues reported by the logged-in user
+- Each issue should show:
+  - Issue Type
+  - Location
+  - Date
+  - Status (Pending / Solved)
+  - Image preview (if available)
+
+Status should be fetched dynamically from database.
+
+-------------------------------------------------
+DATABASE DESIGN (MySQL):
+
+Create tables such as:
+- users (id, name, email, password)
+- issues (id, user_id, type, location, description, image, status, created_at)
+- ragging_reports (id, name, location, description, image, anonymous, created_at)
+
+-------------------------------------------------
+UI/UX REQUIREMENTS:
+- Clean and simple college-style UI
+- Use basic CSS or Tailwind
+- Mobile responsive layout
+- Clear labels and buttons
+- Status badges (Pending = red, Solved = green)
+
+-------------------------------------------------
+OTHER REQUIREMENTS:
+- Use proper folder structure:
+  - frontend/
+  - backend/
+- Include comments in code
+- Provide sample MySQL queries
+- Provide instructions on how to run frontend and backend separately in Replit
+
+Generate complete React components, backend APIs, and MySQL schema.
